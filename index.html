@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying Together🚀</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+
+
+
+    <div class="container">
+        <div class="item navbar">
+
+            <img src="logo.svg" alt="" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+
+
+                <div class="notif_kecil" id="notif_kecil"></div>
+
+                <li><a href="#" id="booking">Booking</a></li>
+                
+                <div class="container_notifikasi" id="container_notifikasi">
+
+                    <div class="navbar_notif">
+                        <h4 class="judulNotif">Notifikasi</h4>
+                        <button  onclick="HapusNotif()" class="notif_hapus">clear</button>
+                    </div>
+
+
+                    
+
+                    <div class="konten_notif" id="konten_notif">
+                        <h3> Tiket kamu sudah terdownload</h3>
+                        <p class="alernt">Hati hati diperjalanan, jangan sampai barang tertinggal yah</p>
+                    </div>
+
+                </div>
+
+
+                <li><a href="#">Contact Center</a></li> 
+            </ul>
+
+            <div class="profile_notifikasi">
+                <a href="loginUser.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                      </svg>
+                </a>
+
+                  
+            </div>
+
+        </div>
+            <div class="item konten">
+                <div class="container_konten">
+                    <div class="tulisan">
+                        <p class="tagar">First travel with us</p>
+                            <h1 class="judul">Let's <span class="travel">travel</span> the world <br> with us</h1>
+                            <p class="deskripsi">Are you ready to travel with us🚀? You can get a <br>
+                            discount on tickets for your first flight with us🤗 </p>
+
+                        <button id="destination"><a href="#destinationScrool" class="DestinationText">Destination🚀</a></button>
+                        <button id="Booking">Booking</button>
+
+                        <div class="kotak">
+                            <div class="item_kotak">
+                                <p class="judul_kotak">From</p>
+                                
+                                <select id="berangkatDari">
+                                    <option selected disabled hidden>Berangkat dari</option>
+                                    <option>Indonesia</option> 
+                                    <option>Singapura</option>
+                                    <option>Malaysia</option>
+                                    <option>Cambodia</option> 
+                                    <option>Russia</option>
+                                    <option>England</option>
+                                    <option>America</option> 
+                                    <option>Roma</option>
+                                    <option>Vatikan</option>
+                                    <option>Yunani</option>
+
+                                    
+                                  </select>
+                                
+                            </div>
+                            <div class="item_kotak">
+                                <p class="judul_kotak">To</p>
+                                <select id="menujuKe">
+                                    <option selected disabled hidden>Menuju Ke</option>
+                                    <option>Indonesia</option> 
+                                    <option>Singapura</option>
+                                    <option>Malaysia</option>
+                                    <option>Cambodia</option> 
+                                    <option>Russia</option>
+                                    <option>England</option>
+                                    <option>America</option> 
+                                    <option>Roma</option>
+                                    <option>Vatikan</option>
+                                    <option>Yunani</option>
+
+                                    
+                                  </select>
+                            </div>
+                            <div class="item_kotak">
+                                <p class="judul_kotak">Price</p>
+                                <div id="info_harga"></div>
+                            </div>
+                            <div class="item_kotak">
+
+                               <div class="kotak_logo">
+                                        <button onclick="Cari()" id="btn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white " class="bi bi-search" viewBox="0 0 16 16">
+                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                    </svg></button>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gambar">
+                        <img src="gambara_konyem.png" alt="" class="gambar_konten">
+                    </div>
+
+
+
+                    <!-- conatiner donwload -->
+
+                    <div class="notif_download" id="notif_download">
+                        <h3 class="text_selamat">Selamat!! Tiket kamu sudah didownload</h3>
+                        <div class="conatiner_btn">
+                            <button class="CloseNotifDownload" onclick="CloseNotifDownload()">Close</button>
+                        </div>
+                    </div>
+
+
+
+
+
+                    
+
+                    <div class="buyTiket" id="buyTiket">
+
+                        <div class="container_buytiket">
+                            <div class="BerangkatDariTiket" id="BerangkatDariTiket">Indonesia</div>
+
+                        
+                            <div class="container_tibake_seat">
+                                <div class="container_tibaKe">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" rgb(0, 164, 230)" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                      </svg>
+    
+                                      <div class="TibaKeTiket" id="TibaKeTiket">Russia</div>
+                                </div>
+    
+    
+    
+                                <div class="container_seat">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="rgb(0, 164, 230)" class="bi bi-luggage-fill" viewBox="0 0 16 16">
+                                        <path d="M2 1.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V5h.5A1.5 1.5 0 0 1 8 6.5V7H7v-.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .5.5H4v1H2.5v.25a.75.75 0 0 1-1.5 0v-.335A1.5 1.5 0 0 1 0 13.5v-7A1.5 1.5 0 0 1 1.5 5H2zM3 5h2V2H3z"/>
+                                        <path d="M2.5 7a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 .5-.5m10 1v-.5A1.5 1.5 0 0 0 11 6h-1a1.5 1.5 0 0 0-1.5 1.5V8H8v8h5V8zM10 7h1a.5.5 0 0 1 .5.5V8h-2v-.5A.5.5 0 0 1 10 7M5 9.5A1.5 1.5 0 0 1 6.5 8H7v8h-.5A1.5 1.5 0 0 1 5 14.5zm9 6.5V8h.5A1.5 1.5 0 0 1 16 9.5v5a1.5 1.5 0 0 1-1.5 1.5z"/>
+                                      </svg>
+    
+                                      <div class="TibaKeTiket" id="seat_Localhost">2 Seat Person</div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                            <div class="informasi_tiket">
+                               <div class="date_information">
+                                <h4>Date</h4>
+                                <div id="date_localhost" class="date_localhost">12/12/2024</div>
+                               </div>
+                               <div class="visitor_information">
+                                <h4>Visitor Name</h4>
+                                <div id="username_Localhost" class="username_Localhost">Jonathan Imanuel</div>
+                               </div>
+                            </div>
+
+                            
+                            <div class="container_btn">
+                                <button onclick="BatalTiket()" class="btn_buytiket batal_btn" id="btn_batal" >Batal</button>
+                                <button onclick="cetakTiket()" class="btn_buytiket cetak_btn" id="btn_cetak">Cetak</button>
+                            </div>
+                           
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="popup" id="popup">
+                        <button onclick="closePopup()" class="closeBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                              </svg>
+                        </button>
+
+                        <h2 class="judul_popUp">Order <span class="Confirmation">Confirmation</span></h2>
+
+
+                        <div class="berangkat_tiba">
+
+                            <div class="berangkat">
+                                <p class="judul_berangkatTiba">From</p>
+                                <div class="input_berangkat" id="input_berangkat"></div>
+                            </div>
+
+                            <div class="tiba">
+                                <p class="judul_berangkatTiba">To</p>
+                                <div class="input_berangkat" id="input_tiba"></div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="berangkat_tiba">
+
+                            <div class="berangkat">
+                                <p class="judul_berangkatTiba">Seat</p>
+                                <input type="number" class="input_berangkat" id="seat">
+                            </div>
+
+                            <div class="tiba">
+                                <p class="judul_berangkatTiba">date</p>
+                                <input type="date" name="" id="date" class="input_berangkat">
+                            </div>
+
+                        </div>
+
+                        <div class="container_btn_price">
+                            <div class="price">
+                                <p class="judul_berangkatTiba">Price</p>
+                                <div class="input_berangkat" id="harga"></div>
+                            </div>
+    
+    
+                            
+                                <div class="btn_konfirmasi_printresi">
+                                    <button onclick="Konfirmasi()" id="btn_popup">Konfirmasi</button>
+                                <button onclick="BuyNow()" id="buyNow"> Buy now</button>
+                                </div>
+                          
+    
+                        </div>
+
+
+                        
+
+
+
+                    </div>
+
+
+                    <div class="popUp_alernt">
+                        
+                    </div> 
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+                <!-- Konten_2 -->
+
+
+                <div class="Konten_2" id="destinationScrool">
+                    <h2>Popular Destination🚀</h2>
+
+                    <div class="container_destination">
+                        <div class="item_destination">
+                            <img src="russia.svg" alt="" class="gambar_destination">
+
+                            <div class="tulisan_destination">
+                                <p class="nama_destination">St Issac's Church</p>
+                                <p class="rating">⭐ 4.5</p>
+
+                            </div>
+
+                            <div class="location">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(0, 164, 230)" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                    <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                  </svg>
+    
+                                  <p class="tulisan_location">Russia</p>
+                            </div>
+                        </div>
+
+                        <div class="item_destination">
+                            <img src="vatikan.svg" alt="" class="gambar_destination">
+
+                            <div class="tulisan_destination">
+                                <p class="nama_destination">Bassilica St Peter</p>
+                                <p class="rating">⭐ 4.5</p>
+
+                            </div>
+
+                            <div class="location">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(0, 164, 230)" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                    <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                  </svg>
+    
+                                  <p class="tulisan_location">Vatikan Roma</p>
+                            </div>
+
+                            
+                        </div>
+
+
+                        <div class="item_destination">
+                            <img src="indonesia.svg" alt="" class="gambar_destination">
+
+                            <div class="tulisan_destination">
+                                <p class="nama_destination">Bali Island</p>
+                                <p class="rating">⭐ 4.5</p>
+
+                            </div>
+
+                            <div class="location">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(0, 164, 230)" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                    <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                  </svg>
+    
+                                  <p class="tulisan_location">Bali, Indonesia</p>
+                            </div>
+                        </div>
+
+
+                        <div class="item_destination">
+                            <img src="america.svg" alt="" class="gambar_destination">
+
+                            <div class="tulisan_destination">
+                                <p class="nama_destination">Liberty</p>
+                                <p class="rating">⭐ 4.5</p>
+
+                            </div>
+
+                            <div class="location">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(0, 164, 230)" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                    <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                  </svg>
+    
+                                  <p class="tulisan_location">USA America</p>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                        
+                        
+                </div>   
+
+                <!-- konten 3 -->
+                <div class="konten_3">
+                    <div class="SocailMedia">
+                        <h4 style="color: rgba(124, 124, 124, 0.493);">Follow us</h4>
+
+                        <!-- Facebook -->
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="rgba(124, 124, 124, 0.493)" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                          </svg></a>
+
+                        <!-- instagram -->
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="rgba(124, 124, 124, 0.493)" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                          </svg></a>
+
+                          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="rgba(124, 124, 124, 0.493)" class="bi bi-google" viewBox="0 0 16 16">
+                                <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"/>
+                                </svg></a>
+
+                    </div>
+
+                    <!-- sponsor -->
+                    <div class="sponsor">
+                        <div class="item_sponsor">
+                            <img src="mytelkomsel.svg" alt="" class="logo_sponsor">
+                            <p class="nama_sponsor">mytelkomsel</p>
+                        </div>
+    
+                        <div class="item_sponsor">
+                            <img src="maps.svg" alt="" class="logo_sponsor">
+                            <p class="nama_sponsor">mytelkomsel</p>
+                        </div>
+    
+                        <div class="item_sponsor">
+                            <img src="shopee.svg" alt="" class="logo_sponsor">
+                            <p class="nama_sponsor">mytelkomsel</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="konten_4">
+                    <div class="gambar">
+                        <img src="image_konten4.svg" alt="" class="gambar_konten4">
+                    </div>
+
+
+                    <div class="tulisan">
+                        <h1 class="Judul_konten4">Explore all corners of <br><span class="span_judulKonten4">The world with us</span></h1>
+                        <p class="deskripsi_Konten4">Travel is total to prejudice and narrow mindedness and many of our people <br>
+                             need it society on these accounts and many of our people need it socely</p>  
+                             
+                             
+                        <div class="keuntungan">
+
+                            <div class="container_item">
+                                <div class="container_keuntungan">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill=" rgb(0, 164, 230)" class="bi bi-globe-asia-australia" viewBox="0 0 16 16">
+                                        <path d="m10.495 6.92 1.278-.619a.483.483 0 0 0 .126-.782c-.252-.244-.682-.139-.932.107-.23.226-.513.373-.816.53l-.102.054c-.338.178-.264.626.1.736a.48.48 0 0 0 .346-.027ZM7.741 9.808V9.78a.413.413 0 1 1 .783.183l-.22.443a.6.6 0 0 1-.12.167l-.193.185a.36.36 0 1 1-.5-.516l.112-.108a.45.45 0 0 0 .138-.326M5.672 12.5l.482.233A.386.386 0 1 0 6.32 12h-.416a.7.7 0 0 1-.419-.139l-.277-.206a.302.302 0 1 0-.298.52z"/>
+                                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M1.612 10.867l.756-1.288a1 1 0 0 1 1.545-.225l1.074 1.005a.986.986 0 0 0 1.36-.011l.038-.037a.88.88 0 0 0 .26-.755c-.075-.548.37-1.033.92-1.099.728-.086 1.587-.324 1.728-.957.086-.386-.114-.83-.361-1.2-.207-.312 0-.8.374-.8.123 0 .24-.055.318-.15l.393-.474c.196-.237.491-.368.797-.403.554-.064 1.407-.277 1.583-.973.098-.391-.192-.634-.484-.88-.254-.212-.51-.426-.515-.741a7 7 0 0 1 3.425 7.692 1 1 0 0 0-.087-.063l-.316-.204a1 1 0 0 0-.977-.06l-.169.082a1 1 0 0 1-.741.051l-1.021-.329A1 1 0 0 0 11.205 9h-.165a1 1 0 0 0-.945.674l-.172.499a1 1 0 0 1-.404.514l-.802.518a1 1 0 0 0-.458.84v.455a1 1 0 0 0 1 1h.257a1 1 0 0 1 .542.16l.762.49a1 1 0 0 0 .283.126 7 7 0 0 1-9.49-3.409Z"/>
+                                      </svg>
+                                </div>
+                                <p class="nama_keuntungan">Flight</p>
+                            </div>
+
+
+                            <div class="container_item">
+                                <div class="container_keuntungan">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill=" rgb(0, 164, 230)" class="bi bi-wifi" viewBox="0 0 16 16">
+                                        <path d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.44 12.44 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.52.52 0 0 0 .668.05A11.45 11.45 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049"/>
+                                        <path d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.46 9.46 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065m-2.183 2.183c.226-.226.185-.605-.1-.75A6.5 6.5 0 0 0 8 9c-1.06 0-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.407.19.611.09A5.5 5.5 0 0 1 8 10c.868 0 1.69.201 2.42.56.203.1.45.07.61-.091zM9.06 12.44c.196-.196.198-.52-.04-.66A2 2 0 0 0 8 11.5a2 2 0 0 0-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5 0 0 0 .707 0l.707-.707z"/>
+                                      </svg>
+                                </div>
+                                <p class="nama_keuntungan">Wifi</p>
+                            </div>
+
+                            <div class="container_item">
+                                <div class="container_keuntungan">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill=" rgb(0, 164, 230)" class="bi bi-buildings-fill" viewBox="0 0 16 16">
+                                        <path d="M15 .5a.5.5 0 0 0-.724-.447l-8 4A.5.5 0 0 0 6 4.5v3.14L.342 9.526A.5.5 0 0 0 0 10v5.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V14h1v1.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zM2 11h1v1H2zm2 0h1v1H4zm-1 2v1H2v-1zm1 0h1v1H4zm9-10v1h-1V3zM8 5h1v1H8zm1 2v1H8V7zM8 9h1v1H8zm2 0h1v1h-1zm-1 2v1H8v-1zm1 0h1v1h-1zm3-2v1h-1V9zm-1 2h1v1h-1zm-2-4h1v1h-1zm3 0v1h-1V7zm-2-2v1h-1V5zm1 0h1v1h-1z"/>
+                                      </svg>
+                                </div>
+                                <p class="nama_keuntungan">Hotel</p>
+                            </div>
+
+
+                            <div class="container_item">
+                                <div class="container_keuntungan">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill=" rgb(0, 164, 230)" class="bi bi-egg-fried" viewBox="0 0 16 16">
+                                        <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                        <path d="M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z"/>
+                                      </svg>
+                                </div>
+                                <p class="nama_keuntungan">Food</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              
+
+
+
+
+
+            </div>
+    </div>
+
+
+    
+
+    <script src="main.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

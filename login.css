@@ -1,0 +1,211 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+}
+
+.form_login{
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 20px;
+    height: 500px;
+    width: 800px;
+    display: grid;
+    grid-template-columns: 400px 400px ;
+}
+
+
+.form_value{
+    margin-top: 50px;
+    margin-left: 25px;
+}
+
+
+
+.btn{
+    
+    background-color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+
+.gambar_form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner{
+    height: 450px;
+    border-radius: 15px;
+    box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08);
+}
+
+
+
+.App{
+    color: rgb(0, 164, 230);
+}
+
+.desk{
+
+    
+    margin-top: 10px;
+    font-weight: 600;
+    color: rgb(172, 172, 172);
+}
+
+
+.input_username_email{
+    display: block;
+}
+
+
+.username{
+    height: 40px;
+    width: 300px;
+    padding-left: 12px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08);
+    margin-top: 18px;
+}
+
+.submit{
+    background-color:  rgb(0, 164, 230);
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+
+
+.profile{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(0, 164, 230);
+    position: fixed;
+    z-index: 10;
+    display: none;
+   
+}
+
+.container_profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.kotak_profile{
+    width: 600px;
+    height: 300px;
+    background-color: white;
+    margin-top: 150px;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: 600px ;
+    grid-template-rows:  150px 75px 75px;
+    box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08);
+}
+
+/* .item{
+    border: 1px solid black;
+} */
+
+.gambar_profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gambar{
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+}
+
+.tombol{
+    margin-top: 10px;
+    margin-left: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.btn_profile{
+    height: 50px;
+    width: 50px;
+}
+
+
+.value_profile{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    
+}
+
+.value{
+    height: 30px;
+    width: 200px;
+   border-radius: 80px;
+   margin-top: 25px;
+   box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08);
+   font-size: 14px;
+   display: flex;
+   justify-content: flex-start;
+   padding-left: 12px;
+   align-items: center;
+}
+
+
+.btn_logout{
+    height: 30px;
+    width: 100px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+
+.btn_back{
+    height: 30px;
+    width: 100px;
+    background-color: rgb(0, 164, 230);
+    color: white;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+
+}
+
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.value_btn{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+}

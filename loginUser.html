@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    
+
+<div class="container">
+
+    <div class="form_login">
+
+        <div class="konten tulisan">
+            <button onclick="refresHome()" class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+            </svg></button>
+
+            <div class="form_value">
+                <h1 class="judul">Let's login <span class="App">Apps</span></h1>
+            <p class="desk">Hey Enter yout details to get sign in to your account</p>
+
+            <div class="input_username_email">
+                <input type="text" class="username" id="username" placeholder="Username">
+                
+                <input type="text" class="username email" id="Gmail" placeholder="Gmail">
+
+                <button onclick="Submit()" class="username submit ">Submit</button>
+            
+            </div>
+            </div>
+        </div>
+        <div class="konten gambar_form">
+            <img src="banner_login.svg" alt="" class="banner">
+        </div>
+    </div>
+
+
+    <div class="profile" id="profile">
+        <div class="container_profile">
+            <div class="kotak_profile">
+                <div class="item gambar_profile">
+                    <img src="profile.svg" alt="" class="gambar">
+                </div>
+                <div class="item value_profile">
+                    <div class="value " id="username_value"></div>
+                    <div class="value" id="gmail_value"></div>
+                </div>
+
+                <div class="item value_btn">
+                    <button onclick="logout()" class="btn_logout">Log Out</button>
+                    <button class="btn_back"><a href="index.html" >Back</a></button>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+    
+
+
+</div>
+
+
+<script src="main.js"></script>
+<script src="login.js"></script>
+</body>
+</html>
