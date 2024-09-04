@@ -66,5 +66,14 @@
 
 <script src="main.js"></script>
 <script src="login.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.setAttribute('loading', 'lazy');
+    });
+});
+
+</script>
 </body>
 </html>
